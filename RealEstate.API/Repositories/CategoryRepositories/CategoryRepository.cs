@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using RealEstate.API.Dtos.CategoryDtos;
 using RealEstate.API.Models;
-using RealEstate.API.Repositories.CategoryRepository;
 
 namespace RealEstate.API.Repositories.CategoryRepositories
 {
