@@ -6,5 +6,7 @@ namespace RealEstate.API.Repositories.CategoryRepositories
     {
         Task<List<ResultCategoryDto>> GetAllCategoryAsync();
         void CreateCategory(CreateCategoryDto categoryDto);
+        void DeleteCategory(int id);
+        void UpdateCategory(UpdateCategoryDto updateCategoryDto);
     }
 }
