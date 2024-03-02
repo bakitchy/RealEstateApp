@@ -1,5 +1,6 @@
-using RealEstate.API.Models;
+﻿using RealEstate.API.Models;
 using RealEstate.API.Repositories.CategoryRepositories;
+using RealEstate.API.Repositories.ProductRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<Context>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
