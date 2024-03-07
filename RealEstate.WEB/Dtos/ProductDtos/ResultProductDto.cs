@@ -1,4 +1,4 @@
-﻿namespace RealEstate.WEB.Dtos.ProductsDto
+﻿namespace RealEstate.WEB.Dtos.ProductsDtos
 {
     public class ResultProductDto
     {
@@ -9,6 +9,11 @@
         public string District { get; set; }
 
         public int ProductCategory { get; set; }
+
+        public string CoverImage { get; set; }
+        public string Type { get; set; }
+        public string Address { get; set; }
+
 
 
     }
