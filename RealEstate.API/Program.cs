@@ -1,6 +1,7 @@
 ﻿using RealEstate.API.Models;
 using RealEstate.API.Repositories.CategoryRepositories;
 using RealEstate.API.Repositories.ProductRepositories;
+using RealEstate.API.Repositories.ServiceRepositories;
 using RealEstate.API.Repositories.WhoWeAreRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,7 @@ builder.Services.AddTransient<Context>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IWhoWeAreDetailRepository , WhoWeAreDetailRepository>();
+builder.Services.AddTransient<IServiceRepository , ServiceRepository>();
 
 
 var app = builder.Build();
