@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using RealEstate.WEB.Dtos.PopularLocationDtos;
 
-namespace RealEstate.WEB.ViewComponents
+namespace RealEstate.WEB.ViewComponents.DefaultsLayout
 {
     public class _PopularLocationViewComponentsPartial : ViewComponent
     {

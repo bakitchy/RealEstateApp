@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using RealEstate.WEB.Dtos.ServiceDtos;
 using RealEstate.WEB.Dtos.WhoWeAreDetailDtos;
 
-namespace RealEstate.WEB.ViewComponents
+namespace RealEstate.WEB.ViewComponents.DefaultsLayout
 {
     public class _IndexViewComponentsPartial : ViewComponent
     {
@@ -31,7 +31,7 @@ namespace RealEstate.WEB.ViewComponents
 
                 var value = JsonConvert.DeserializeObject<List<ResultWhoWeAreDetailDto>>(jsonData);
                 var value2 = JsonConvert.DeserializeObject<List<ResultServiceDto>>(jsonData2);
-                
+
                 ViewBag.title = value.Select(x => x.Title).FirstOrDefault();
                 ViewBag.subTitle = value.Select(x => x.Subtitle).FirstOrDefault();
                 ViewBag.description1 = value.Select(x => x.Description1).FirstOrDefault();

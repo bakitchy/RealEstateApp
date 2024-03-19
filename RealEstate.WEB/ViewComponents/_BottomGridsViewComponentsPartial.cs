@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace RealEstate.WEB.ViewComponents
+namespace RealEstate.WEB.ViewComponents.DefaultsLayout
 {
     public class _BottomGridsViewComponentsPartial : ViewComponent
     {

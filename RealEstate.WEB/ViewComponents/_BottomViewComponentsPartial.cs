@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using RealEstate.WEB.Dtos.BottomGridDtos;
 
-namespace RealEstate.WEB.ViewComponents
+namespace RealEstate.WEB.ViewComponents.DefaultsLayout
 {
     public class _BottomViewComponentsPartial : ViewComponent
     {
@@ -17,7 +17,7 @@ namespace RealEstate.WEB.ViewComponents
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:44359/api/BottomGrids");
-            if(responseMessage.IsSuccessStatusCode)
+            if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultBottomGridDto>>(jsonData);

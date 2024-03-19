@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using RealEstate.WEB.Dtos.ProductsDtos;
 
-namespace RealEstate.WEB.ViewComponents
+namespace RealEstate.WEB.ViewComponents.DefaultsLayout
 {
     public class _LocationViewComponentsPartial : ViewComponent
     {

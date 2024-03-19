@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_AdminLayoutHeadComponentPartial")
+<body>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        @await Component.InvokeAsync("_AdminLayoutSpinnerComponentPartial")
+        @await Component.InvokeAsync("_AdminLayoutSidebarComponentPartial")
+        @await Component.InvokeAsync("_AdminLayoutContentComponentPartial")
+        @RenderBody()
+        @await Component.InvokeAsync("_AdminLayoutFooterComponentPartial")
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    @await Component.InvokeAsync("_AdminLayoutScriptComponentPartial")
+</body>
+</html>
+

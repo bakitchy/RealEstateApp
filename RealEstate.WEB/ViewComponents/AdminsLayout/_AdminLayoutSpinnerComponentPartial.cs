@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace RealEstate.WEB.ViewComponents.DefaultsLayout
+namespace RealEstate.WEB.ViewComponents.AdminsLayout
 {
-    public class _NewsViewComponentsPartial : ViewComponent
+    public class _AdminLayoutSpinnerComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

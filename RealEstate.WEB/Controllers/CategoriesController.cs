@@ -1,26 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using RealEstate.WEB.Dtos.TestimonialDtos;
+using RealEstate.WEB.Dtos.CategoryDtos;
 
-namespace RealEstate.WEB.ViewComponents.DefaultsLayout
+namespace RealEstate.WEB.Controllers
 {
-    public class _OurClientsViewComponentsPartial : ViewComponent
+    public class CategoriesController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _OurClientsViewComponentsPartial(IHttpClientFactory httpClientFactory)
+        public CategoriesController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44359/api/Testimonials");
+            var responseMessage = await client.GetAsync("https://localhost:44359/api/Categories");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultTestimonialDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
                 return View(values);
             }
             return View();
