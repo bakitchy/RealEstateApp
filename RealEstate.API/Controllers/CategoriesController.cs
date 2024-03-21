@@ -30,7 +30,7 @@ namespace RealEstate.API.Controllers
             return Ok("Kategori başarılı bir şekilde eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
             _categoryRepository.DeleteCategory(id);
@@ -44,11 +44,12 @@ namespace RealEstate.API.Controllers
             return Ok("Kategoryi başarılı bir şekilde güncellenmiştir.");
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(int id)
         {
             var value = await _categoryRepository.GetCategory(id);
             return Ok(value);
         }
+
     }
 }
