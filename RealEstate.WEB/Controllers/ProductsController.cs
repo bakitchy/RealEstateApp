@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using RealEstate.WEB.Dtos.CategoryDtos;
 using RealEstate.WEB.Dtos.ProductDtos;
 using RealEstate.WEB.Dtos.ProductsDtos;
 using System.Text;
@@ -30,8 +32,24 @@ namespace RealEstate.WEB.Controllers
         }
 
         [HttpGet]
-        public IActionResult CreateProduct()
+        public async Task<IActionResult> CreateProduct()
         {
+
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7026/api/Categories");
+
+            var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
+
+            List<SelectListItem> categoryValues = (from x in values.ToList()
+                                                   select new SelectListItem
+                                                   {
+                                                       Text = x.Name,
+                                                       Value = x.Id.ToString()
+                                                   }).ToList();
+
+            ViewBag.v = categoryValues;  
+            
             return View();
         }
 
