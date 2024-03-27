@@ -1,6 +1,7 @@
 ﻿using RealEstate.API.Models;
 using RealEstate.API.Repositories.BottomGridRepositories;
 using RealEstate.API.Repositories.CategoryRepositories;
+using RealEstate.API.Repositories.EmployeeRepositories;
 using RealEstate.API.Repositories.PopularLocationRepositories;
 using RealEstate.API.Repositories.ProductRepositories;
 using RealEstate.API.Repositories.ServiceRepositories;
@@ -25,6 +26,7 @@ builder.Services.AddTransient<IServiceRepository , ServiceRepository>();
 builder.Services.AddTransient<IBottomGridRepository , BottomGridRepository>();
 builder.Services.AddTransient<ITestimonailRepository , TestimonailRepository>();
 builder.Services.AddTransient<IPopularLocationRepository , PopularLocationRepository>();
+builder.Services.AddTransient<IEmployeeRepository , EmployeeRepository>();
 
 
 var app = builder.Build();

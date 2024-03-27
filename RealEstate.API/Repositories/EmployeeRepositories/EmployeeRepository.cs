@@ -66,14 +66,14 @@ namespace RealEstate.API.Repositories.EmployeeRepositories
 
             using(var connection = _context.CreateConnection())
             {
-                var values = await connection.QueryFirstOrDefaultAsync<GetByIDEmployeeDto>(query);
+                var values = await connection.QueryFirstOrDefaultAsync<GetByIDEmployeeDto>(query, parameters);
                 return values;
             }
         }
 
         public async void UpdateEmployee(UpdateEmployeeDto updateEmployeeDto)
         {
-            string query = "update Employee(Name=@name, Title=@title, Mail=@mail, PhoneNumber=@phoneNumber, ImageUrl=@imageUrl, Status=@status where Id=@id";
+            string query = "update Employee Set Name=@name, Title=@title, Mail=@mail, PhoneNumber=@phoneNumber, ImageUrl=@imageUrl, Status=@status where Id=@id";
 
             var parameters = new DynamicParameters();
             parameters.Add("@name", updateEmployeeDto.Name);
@@ -82,6 +82,7 @@ namespace RealEstate.API.Repositories.EmployeeRepositories
             parameters.Add("@phoneNumber", updateEmployeeDto.PhoneNumber);
             parameters.Add("@imageUrl", updateEmployeeDto.ImageUrl);
             parameters.Add("@status", updateEmployeeDto.Status);
+            parameters.Add("@id", updateEmployeeDto.Id);
 
             using (var connection = _context.CreateConnection())
             {
