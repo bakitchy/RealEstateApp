@@ -23,6 +23,13 @@ namespace RealEstate.API.Controllers
             return Ok(values);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateEmployee(CreateEmployeeDto createEmployeeDto)
+        {
+            _employeeRepository.CreateEmployee(createEmployeeDto);
+            return Ok("Personel eklendi");
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {

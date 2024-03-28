@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Admins/Index.cshtml";
+    int count = 0;
 }
 
 @model List<ResultEmployeeDto>
@@ -26,20 +27,21 @@
 
                             @foreach (var item in Model)
                             {
+                                count++;
                                 <tr>
-                                    <th scope="row">@item.Id</th>
+                                    <th scope="row">@count</th>
                                     <td>@item.Name</td>
                                     <td>@item.Title</td>
                                     <td>@item.Status</td>
-                                    <td><a href="/Employees/DeleteCategory/@item.Id" class="btn btn-outline-danger">Sil</a></td>
-                                    <td><a href="/Employees/UpdateCategory/@item.Id" class="btn btn-outline-success">Güncelle</a></td>
+                                    <td><a href="/Employees/DeleteEmployee/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Employees/UpdateEmployee/@item.Id" class="btn btn-outline-success">Güncelle</a></td>
 
                                 </tr>
                             }
 
                         </tbody>
                     </table>
-                    <td><a href="/Employees/CreateCategory" class="btn btn-outline-info">Yeni Personel  Oluştur</a></td>
+                    <td><a href="/Employees/CreateEmployee/" class="btn btn-outline-info">Yeni Personel  Oluştur</a></td>
                 </div>
             </div>
         </div>
